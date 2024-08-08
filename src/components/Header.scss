@@ -1,0 +1,85 @@
+@use '../styles/break-points' as *;
+@use '../styles/colors' as *;
+@use '../styles/mixins' as *;
+
+body {
+    margin:0;
+    width: 100%;
+    padding: 0;
+}
+
+.logo {
+    height:90px;
+    width: 90px;
+    margin-top: 1.5rem;
+
+        @include tablet {
+            padding-left: 1rem;
+            height: 100px;
+            width: 100px;
+        }
+
+        @include desktop{
+            height: 120px;
+            width: 120px;
+            padding-left: 2rem;
+        }
+}
+
+nav {
+    box-sizing: border-box;
+
+}
+
+.nav__container {
+    height: 4rem; 
+    background-color: $Sage;
+    display: flex;
+    align-items: center;
+
+        @include tablet {
+            justify-content: space-between;
+            height: 5rem;
+            padding-right: 1rem;
+        }
+
+        @include desktop {
+            padding-right: 2rem;
+            height: 6rem;
+        }
+}
+
+.nav__button, .nav__button--about {
+    text-decoration: none;
+    color: $White;
+    font-size: 13px;
+    border-radius: 20px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+
+    &:hover {
+        text-decoration: underline 1px solid $White;
+    }
+
+    &:active{
+        background-color: $Green;
+        text-decoration: none;
+    }
+
+    &:focus{
+        background-color: $Green;
+    }
+
+
+        @include tablet {
+            font-size: 20px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        @include desktop {
+            margin-right: 2rem;
+        }
+
+}
+
