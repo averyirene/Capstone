@@ -21,6 +21,7 @@
 .results {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .results__container {

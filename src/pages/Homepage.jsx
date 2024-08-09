@@ -9,15 +9,25 @@ const Homepage = () => {
     const [showResults, setShowResults] = useState(false);
     const [errors, setErrors] = useState({ symptom: '', age: '' });
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (age < 12) {
+        if (!symptom) {
+            alert('Please enter a symptom');
+            return;
+        }
+
+        if (!age) {
+            alert('Please enter your age');
+            return;
+        } else if (age < 12) {
             alert('Age must be at least 12');
             return;
         }
+
         setShowResults(true);
+        setErrors({ symptom: '', age: '' }); 
+
     };
 
     const handleReset = () => {

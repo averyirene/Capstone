@@ -16,6 +16,16 @@ export default function Login({ setIsLoggedIn }) {
         const username = event.target.username.value;
         const password = event.target.password.value;
 
+        if (!username) {
+            alert('Please enter your username');
+            return;
+        }
+
+        if (!password) {
+            alert('Please enter your password');
+            return;
+        }
+
         try {
             const response = await axios.post(`${apiUrl}/login`, {
                 username,
@@ -40,19 +50,23 @@ export default function Login({ setIsLoggedIn }) {
             <form className="login__form" onSubmit={handleLoginSubmit}>
                 <h1 className="login__title">Log in</h1>
 
-                <label>Username:</label>
-                <input type="text" name="username" required />
+                <div className="login__form--container">
+                    <label className="label__login">Username:</label>
+                    <input type="text" name="username"/>
+                </div>
 
-                <label>Password:</label>
-                <input type="password" name="password" required />
+                <div className="login__form--container">
+                    <label className="label__login">Password:</label>
+                    <input type="password" name="password"/>
+                </div>
 
                 {error && <div className="login__message">{error}</div>}
 
                 <button type="submit" className="login__button">Log in</button>
 
                 <div className="login__page--signup">
-                    <p>Register an account</p>
-                    <button className ="login__button" type="button" onClick={() => navigate("/signup")}>
+                    <p className="login__register--text">Register an account</p>
+                    <button className ="signup__button" type="button" onClick={() => navigate("/signup")}>
                         Sign up
                     </button>
                 </div>
