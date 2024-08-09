@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import '../pages/Login.scss';
+
+const apiUrl = import.meta.env.VITE_API_URL;
+
 
 export default function Login({ setIsLoggedIn }) {
     const [error, setError] = useState("");
@@ -13,7 +17,7 @@ export default function Login({ setIsLoggedIn }) {
         const password = event.target.password.value;
 
         try {
-            const response = await axios.post("http://localhost:2222/login", {
+            const response = await axios.post(`${apiUrl}/login`, {
                 username,
                 password,
             });
@@ -48,7 +52,7 @@ export default function Login({ setIsLoggedIn }) {
 
                 <div className="login__page--signup">
                     <p>Register an account</p>
-                    <button type="button" onClick={() => navigate("/signup")}>
+                    <button className ="login__button" type="button" onClick={() => navigate("/signup")}>
                         Sign up
                     </button>
                 </div>

@@ -2,11 +2,6 @@
 @use '../styles/colors' as *;
 @use '../styles/mixins' as *;
 
-body {
-    margin:0;
-    width: 100%;
-    padding: 0;
-}
 
 .logo {
     height:90px;
@@ -36,6 +31,8 @@ nav {
     background-color: $Sage;
     display: flex;
     align-items: center;
+    border-radius: 3px;
+
 
         @include tablet {
             justify-content: space-between;
@@ -57,8 +54,10 @@ nav {
     padding: 5px;
 
     &:hover {
-        text-decoration: underline 1px solid $White;
+        text-decoration: underline 2px solid $Green;
+        text-underline-offset: .4rem;
     }
+
 
     &:active{
         background-color: $Green;
@@ -67,6 +66,8 @@ nav {
 
     &:focus{
         background-color: $Green;
+        text-decoration: none;
+
     }
 
 
@@ -83,6 +84,10 @@ nav {
 }
 
 .links__container {
-    padding-left: 2rem;
-    
+    padding-left: 1rem;
+
+        @include tablet {
+            padding-left: 2rem;
+        }
+
 }

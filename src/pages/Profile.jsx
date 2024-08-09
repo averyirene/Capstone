@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-const baseUrl = "http://localhost:2222";
-const profileUrl = `${baseUrl}/profile`;
+const apiUrl = import.meta.env.VITE_API_URL;
 
 function Profile({ onSignOut }) {
 const [isLoading, setIsLoading] = useState(true);
@@ -20,7 +19,7 @@ if (!token) {
 
 const fetchProfile = async () => {
     try {
-    const response = await axios.get(profileUrl, {
+    const response = await axios.get(`${apiUrl}/profile`, {
         headers: {
         Authorization: `Bearer ${token}`,
         },

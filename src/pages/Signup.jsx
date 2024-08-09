@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function Signup({ setIsLoggedIn }) {
 const [error, setError] = useState("");
 
@@ -11,7 +13,7 @@ const username = event.target.username.value;
 const password = event.target.password.value;
 
 try {
-    const response = await axios.post("http://localhost:2222/signup", {
+    const response = await axios.post(`${apiUrl}/signup`, {
     username,
     password,
     });
