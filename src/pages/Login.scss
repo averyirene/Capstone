@@ -78,10 +78,8 @@
 }
 
 .label__login {
+    margin-right: .5rem;
 
-    @include tablet {
-        margin-right: .5rem;
-    }
 }
 
 .signup__button {

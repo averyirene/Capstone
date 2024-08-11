@@ -14,8 +14,12 @@ const password = event.target.password.value;
 
 try {
     const response = await axios.post(`${apiUrl}/signup`, {
-    username,
-    password,
+        username,
+        password,
+    }, {
+        headers: {
+            'Content-Type': 'application/json',
+        },
     });
 
     if (response.data.success) {

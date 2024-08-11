@@ -34,7 +34,10 @@ h3 {
 }
 }
 
-.checker__container {
+.checker{
+
+
+&__container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +47,7 @@ h3 {
 
 }
 
-.checker__form {
+&__form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -55,6 +58,7 @@ h3 {
     background-color: $White; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
+}
 }
 
 label {

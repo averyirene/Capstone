@@ -14,6 +14,7 @@ const Header = ({ isLoggedIn }) => {
                 <Link to="/" className="nav__button">Home</Link>
                 <Link to="/breathe" className="nav__button">Breathe</Link>
                 <Link to="/about" className="nav__button--about">About</Link>
+                {!isLoggedIn && <Link to="/login" className="nav__button">Login</Link>}
                 {isLoggedIn && <Link to="/profile" className="nav__button">Profile</Link>}
             </div>
             </div>
