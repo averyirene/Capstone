@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../components/Results.scss'
 
 
-const Results = ({ symptom, age, onReset }) => {
+const Results = ({ symptom, age, result, onReset }) => {
 
     const navigate = useNavigate();
 
@@ -24,6 +24,7 @@ const Results = ({ symptom, age, onReset }) => {
             </div>
 
             <p>Your results...</p>
+            <p>{result}</p>
 
             <button className="checker__button" onClick={handleBackClick}>
                 Back to Checker

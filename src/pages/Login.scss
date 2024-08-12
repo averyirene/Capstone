@@ -17,10 +17,12 @@
 
         @include tablet {
             width: 30%;
+            margin-top:.5rem;
         }
 
         @include desktop {
             width: 25%;
+            margin-top: .5rem;
         }
 
 
@@ -31,6 +33,10 @@
     &:focus {
         outline: none; 
     }
+}
+
+&__input {
+    margin-top: .5rem;
 }
 
 &__form {
@@ -53,6 +59,11 @@
 &__form--container {
     margin-left: 1rem;
     margin-right: 1rem;
+
+    @include desktop {
+        display: flex;
+        align-items: center;
+    }
         
 }
 
@@ -66,9 +77,9 @@
 }
 
 
-&__register--text {
+&__page--text {
     margin-left: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 &__title {
@@ -80,9 +91,13 @@
 .label__login {
     margin-right: .5rem;
 
+    @include desktop {
+        margin-bottom: .625rem;
+    }
+
 }
 
-.signup__button {
+.signup__button--login {
     border: none;
     border-radius: 4px;
     background-color: $Green;
@@ -92,4 +107,12 @@
     margin-right: 1rem;
     margin-left: 1rem;
     height: 2rem;
+
+    @include tablet {
+        width: 30%;
+    }
+
+    @include desktop {
+        width: 25%;
+    }
 }

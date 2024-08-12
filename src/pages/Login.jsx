@@ -52,12 +52,12 @@ export default function Login({ setIsLoggedIn }) {
 
                 <div className="login__form--container">
                     <label className="label__login">Username:</label>
-                    <input type="text" name="username"/>
+                    <input className= "login__input" type="text" name="username"/>
                 </div>
 
                 <div className="login__form--container">
                     <label className="label__login">Password:</label>
-                    <input type="password" name="password"/>
+                    <input className= "login__input" type="password" name="password"/>
                 </div>
 
                 {error && <div className="login__message">{error}</div>}
@@ -65,8 +65,8 @@ export default function Login({ setIsLoggedIn }) {
                 <button type="submit" className="login__button">Log in</button>
 
                 <div className="login__page--signup">
-                    <p className="login__register--text">Register an account</p>
-                    <button className ="signup__button" type="button" onClick={() => navigate("/signup")}>
+                    <p className="login__page--text">Register an account</p>
+                    <button className ="signup__button--login" type="button" onClick={() => navigate("/signup")}>
                         Sign up
                     </button>
                 </div>
