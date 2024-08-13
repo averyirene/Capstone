@@ -2,29 +2,34 @@
 @use '../styles/colors' as *;
 @use '../styles/mixins' as *;
 
-.results__title {
+
+.results {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+&__title {
     margin-top: 0;
     color: darken($Green, 10%); 
     display: flex;
     justify-content: center;
     margin-left: 0;
 
-
 }
 
-.results__subtitle {
+&__text {
+    border-top: 1px solid $Purple;
+    padding-top: 1rem;
+    color: darken($Purple, 20%);
+}
+
+&__subtitle {
     padding-right: .5rem;
     font-weight: bold;
     color: darken($Green, 10%); 
 }
 
-.results {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.results__container {
+&__container {
     background-color: $White;
     align-items: center;
     padding: 2rem;
@@ -32,4 +37,5 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 60%;
     border: 2px solid $Green;
+}
 }

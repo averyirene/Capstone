@@ -15,9 +15,10 @@ return (
 
     <div className='homepage__disclaimer'>
         <h2>Mindful Breathing</h2>
-        <p className="homepage__disclaimer--text"> Lorem ipsum dolor, sit amet 
-        consectetur adipisicing elit. Itaque a praesentium accusantium consectetur
-        corporis!</p>
+        <p className="homepage__disclaimer--text">Mindful breathing involves 
+        observing your inhales and exhales. There are different breathing rhythms 
+        which promote stress relief and pain relief, a sense of control and meditative benefits. 
+        </p>
 
     </div>
 

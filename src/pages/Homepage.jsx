@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Homepage.scss';
 import Results from '../components/Results';
+import loader from '../assets/reassure-loader.gif';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -11,6 +12,8 @@ const Homepage = () => {
     const [showResults, setShowResults] = useState(false);
     const [result, setResults] = useState('');
     const [errors, setErrors] = useState({ symptom: '', age: '' });
+    const [loading, setLoading] = useState(false);
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -29,6 +32,8 @@ const Homepage = () => {
         }
 
         setShowResults(true);
+        setLoading(true);
+
         setErrors({ symptom: '', age: '' }); 
 
         try {
@@ -49,9 +54,13 @@ const Homepage = () => {
     
             setResults(text);
         } catch (error) {
+            setLoading(false);
             console.error('Error getting data');
             setResults('Failed to get results.');
-        }
+        
+        } finally {
+        setLoading(false);
+    }
     };
 
     const handleReset = () => {
@@ -65,15 +74,19 @@ const Homepage = () => {
 
         <div className="homepage__disclaimer">
             <h2>Disclaimer</h2>
-            <p className="homepage__disclaimer--text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, 
-                placeat odit possimus qui dolore asperiores repudiandae cum dolor! 
+            <p className="homepage__disclaimer--text">This symptom checker is designed specifically for people 
+            struggling with hypochondria and health anxiety with the purpose of affirming their anxiety and not their
+            symptoms. This does not supply any medical or health advice, and if you are seeking this, please contact 
+            a health professional. 
                 </p>
         </div>
 
         <h3>Symptom Checker</h3>
 
         <section className="checker__container">
-        {!showResults ? (
+                {loading ? (
+                    <img src={loader} alt="Loading..."/>
+                ) : !showResults ? (
 
             <form className="checker__form" autoComplete='off' onSubmit={handleSubmit}>
                 <label htmlFor="symptom">Symptom</label>

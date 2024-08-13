@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import '../pages/Profile.scss';
+import loader from '../assets/reassure-loader.gif';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -53,8 +54,6 @@ const handleSignOut = () => {
 const handleAddEntry = async (event) => {
     event.preventDefault();
 
-    const currentDate = new Date().toISOString().split('T')[0]; 
-    const currentTime = new Date().toTimeString().split(' ')[0];
 
     try {
         const response = await axios.post(
@@ -78,7 +77,7 @@ const handleAddEntry = async (event) => {
 };
 
     return isLoading ? (
-    <h1>Loading...</h1>
+            <img src={loader} alt="Loading..."/>
     ) : (
     <div>
         <h1 className="profile__title">Welcome {userInfo.username}!</h1>
@@ -107,7 +106,7 @@ const handleAddEntry = async (event) => {
                     <p className="journal__entries--response">No journal entries yet.</p>
                 ) : (
                     journalEntries
-                        .filter(entry => entry.username === userInfo.username) // Filter entries by username
+                        .filter(entry => entry.username === userInfo.username) 
                         .map((entry) => (
                             <div key={entry.id} className="journal__entry">
                                 <p>Entry: {entry.entry}</p>

@@ -23,8 +23,7 @@ const Results = ({ symptom, age, result, onReset }) => {
             <p className='results__subtitle'>Age:</p> {age}
             </div>
 
-            <p>Your results...</p>
-            <p>{result}</p>
+            <p className='results__text'>{result}</p>
 
             <button className="checker__button" onClick={handleBackClick}>
                 Back to Checker
