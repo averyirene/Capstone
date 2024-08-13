@@ -116,8 +116,9 @@ const handleAddEntry = async (event) => {
                         ))
                 )}
             </div>
-
+        <div className="signout__button--container">
         <Link to="/" onClick={handleSignOut} className="signout__button">Sign Out</Link>
+        </div>
     </div>
 
 
