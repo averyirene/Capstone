@@ -62,6 +62,7 @@
 
     @include desktop {
         align-items: center;
+        padding-bottom: 1.27rem;
         
     }
 }
@@ -125,5 +126,6 @@
 
     @include desktop {
         width: 25%;
+        margin-top:19px;
     }
 }

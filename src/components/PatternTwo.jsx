@@ -37,7 +37,7 @@ return (
         <h4 className='breathe__text'>{text}</h4>
 
         <div className='breathing__box'>
-            <img className='pattern__1' src={pattern__2}/>
+            <img className='pattern__1' src={pattern__2}alt="Flower image growing in increments"/>
         </div>
     </div>
 

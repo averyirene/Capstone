@@ -34,7 +34,9 @@
 &__entry--text {
     border-bottom: 1px solid $Green;
     padding-bottom: 1rem;
+    color: darken($Green, 30%);
 }
+
 
 &__entries--response {
     margin-right: 1rem;
@@ -51,7 +53,17 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
 
 }
+&__entry--title {
+    color: $Purple;
+    font-weight: bold;
 }
+
+&__entry--entry {
+    color: darken($Green, 30%);
+}
+
+}
+
 
 textarea {
     min-height: 20rem;

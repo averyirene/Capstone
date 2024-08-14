@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 const PatternOne = () => {
 const [text, setText] = useState('Breathe in');
 
+
 useEffect(() => {
     let breathein, holdbreath, breatheout;
 
@@ -37,7 +38,7 @@ return (
         <h4 className='breathe__text'>{text}</h4>
 
         <div className='breathing__box'>
-            <img className='pattern__1' src={pattern__1}/>
+            <img className='pattern__1' src={pattern__1} alt="Flower image growing in increments"/>
         </div>
     </div>
 

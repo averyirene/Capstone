@@ -6,11 +6,12 @@ import loader from '../assets/reassure-loader.gif';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
-function Profile({ onSignOut }) {
+function Profile({}) {
 const [isLoading, setIsLoading] = useState(true);
 const [userInfo, setUserInfo] = useState({});
 const [newEntry, setNewEntry] = useState(""); 
 const [journalEntries, setJournalEntries] = useState([]); 
+
 
 const navigate = useNavigate();
 
@@ -44,6 +45,7 @@ const fetchProfile = async () => {
     }
 };
 
+
 fetchProfile();
 }, [token, navigate]);
 
@@ -51,16 +53,23 @@ const handleSignOut = () => {
     sessionStorage.removeItem("JWTtoken");
 };
 
+const newDate = (dateTimeString) => {
+    return dateTimeString.split('T')[0]; 
+};
+
 const handleAddEntry = async (event) => {
     event.preventDefault();
 
-
+    const now = new Date();
+    const date = now.toISOString().split('T')[0]; 
+    const currentTime = now.toTimeString().split(' ')[0]; 
+    
     try {
         const response = await axios.post(
             `${apiUrl}/journal`,
             {
                 username: userInfo.username,
-                date: currentDate,
+                date: date,
                 time: currentTime,
                 entry: newEntry,
             },
@@ -105,8 +114,8 @@ const handleAddEntry = async (event) => {
                         .filter(entry => entry.username === userInfo.username) 
                         .map((entry) => (
                             <div key={entry.id} className="journal__entry">
-                                <p>Entry: {entry.entry}</p>
-                                <p className="journal__entry--text">Entry Date: {entry.date}</p>
+                                <p className="journal__entry--title">Entry:</p> <p className="journal__entry--entry">{entry.entry}</p>
+                                <p className="journal__entry--title">Entry Date:</p> <p className="journal__entry--text">{newDate(entry.date)}</p>
                             </div>
                         ))
                 )}

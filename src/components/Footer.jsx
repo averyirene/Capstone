@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import './Footer.scss';
 import facebook from '../assets/reassure-facebook.png';
 import instagram from '../assets/reassure-instagram.png';
