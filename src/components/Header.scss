@@ -2,6 +2,9 @@
 @use '../styles/colors' as *;
 @use '../styles/mixins' as *;
 
+#root {
+    height: 100vh;
+}
 
 .logo {
     height:90px;

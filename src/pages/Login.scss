@@ -2,7 +2,17 @@
 @use '../styles/colors' as *;
 @use '../styles/mixins' as *;
 
+
 .login{
+
+&__page {
+    margin-bottom: 13rem;
+
+    @include tablet {
+        margin-bottom: 12rem;
+
+    }
+}
 
 &__button {
     border: none;

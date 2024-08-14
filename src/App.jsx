@@ -7,6 +7,7 @@ import Breathe from "./pages/Breathe";
 import About from "./pages/About";
 import Signup from "./pages/Signup";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn}/>} />
 
         </Routes>
+        <Footer/>
     </BrowserRouter>
   );
 }

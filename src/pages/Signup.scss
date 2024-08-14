@@ -2,6 +2,15 @@
 @use '../styles/colors' as *;
 @use '../styles/mixins' as *;
 
+.signup__page {
+    margin-bottom: 13rem;
+
+    @include tablet {
+        margin-bottom: 12rem;
+
+    }
+}
+
 
 .signup__form {
     background: $White; 

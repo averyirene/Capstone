@@ -95,10 +95,6 @@ const handleAddEntry = async (event) => {
 
                 </form>
 
-                <div className="symptoms__log">
-                    <p className="symptoms__log--text">My symptoms...</p>
-                </div>
-
             </div>
 
             <div className="journal__entries">
