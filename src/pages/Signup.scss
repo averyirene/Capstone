@@ -2,7 +2,10 @@
 @use '../styles/colors' as *;
 @use '../styles/mixins' as *;
 
-.signup__page {
+
+.signup {
+
+&__page {
     margin-bottom: 13rem;
 
     @include tablet {
@@ -11,8 +14,7 @@
     }
 }
 
-
-.signup__form {
+&__form {
     background: $White; 
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
@@ -45,7 +47,7 @@
 }
 }
 
-.signup__title {
+&__title {
     margin-bottom: 1.4375rem;
     color: darken($Green, 10%);
     margin-left: 1rem;
@@ -56,13 +58,13 @@
     }
 }
 
-.signup__label {
+&__label {
     margin-bottom: 0.5rem;
     display: block;
     margin-right: .5rem;
 }
 
-.signup__input {
+&__input {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 0.75rem;
@@ -75,13 +77,13 @@
         }
 }
 
-.signup__message {
+&__message {
     color: red;
     margin-bottom: 1rem;
     text-align: center;
 }
 
-.signup__button {
+&__button {
     border: none;
     border-radius: 4px;
     background-color: $Green;
@@ -108,7 +110,7 @@
         outline: none; 
     }
 }
-
+}
 .login__register--text {
     padding-left: 1rem;
 }

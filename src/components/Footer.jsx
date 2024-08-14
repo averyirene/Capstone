@@ -12,9 +12,9 @@ const Footer = () => {
 
                 <div className="footer__items--container">
 
-                    <img className="footer__items" src={facebook} alt="Facebook logo" />
-                    <img className="footer__items" src={instagram} alt="Instagram logo" />
-                    <img className="footer__items" src={twitter} alt="Twitter logo" />
+                    <a href="https://www.facebook.com"><img className="footer__items" src={facebook} alt="Facebook logo" /></a>
+                    <a href="https://www.instagram.com"><img className="footer__items" src={instagram} alt="Instagram logo" /></a>
+                    <a href= "https://www.twitter.com"> <img className="footer__items" src={twitter} alt="Twitter logo" /></a>
                     <p className="footer__text">Contact: averyirenes@gmail.com</p>
 
                 </div>
