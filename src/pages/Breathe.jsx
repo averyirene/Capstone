@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PatternOne from '../components/PatternOne';
 import PatternTwo from '../components/PatternTwo';
+import PatternCustom from '../components/PatternCustom';
 import './Breathe.scss';
 
 const Breathe = () => {
@@ -24,10 +25,12 @@ return (
 
     {currentPattern === 'patternOne' && <PatternOne />}
     {currentPattern === 'patternTwo' && <PatternTwo />}
+    {currentPattern === 'patternCustom' && <PatternCustom />}
     
     <div className='button__pattern--container'>
         <button className='pattern__button' onClick={() => handlePatternChange('patternOne')}>478 Breathing</button>
         <button className='pattern__button' onClick={() => handlePatternChange('patternTwo')}>444 Breathing</button>
+        <button className='pattern__button' onClick={() => handlePatternChange('patternCustom')}>Make Your Own!</button>
     </div>
     </>
 );
