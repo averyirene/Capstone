@@ -48,7 +48,7 @@ export default function Login({ setIsLoggedIn }) {
     return (
     
         <div className="login__page">
-            <form className="login__form" onSubmit={handleLoginSubmit}>
+            <form className="login__form" autoComplete= "off" onSubmit={handleLoginSubmit}>
                 <h1 className="login__title">Log in</h1>
 
                 <div className="login__form--container">

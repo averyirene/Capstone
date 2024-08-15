@@ -8,7 +8,7 @@ const Header = ({ isLoggedIn }) => {
         <nav>
             
             <div className="nav__container">
-            <img className="logo" src={logo} alt="Reassure logo" />
+            <Link to="/"><img className="logo" src={logo} alt="Reassure logo" /></Link>
 
             <div className="links__container">
                 <Link to="/" className="nav__button">Home</Link>

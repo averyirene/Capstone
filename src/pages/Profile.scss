@@ -58,7 +58,7 @@
     font-weight: bold;
 }
 
-&__entry--entry {
+&__entry--data {
     color: darken($Green, 30%);
 }
 
@@ -95,10 +95,37 @@ textarea {
     margin-top: 2rem;
 }
 
-.symptoms__log {
 
-&--text {
-    margin-left:1rem;
+.symptoms{
+
+&__entries {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: $Purple; 
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+&__entry--title {
+    color: $Cream;
+    font-weight: bold;
+
+
+
+}
+
+&__entry--text {
+    color: darken($Green, 30%);
+    border-bottom: 1px solid darken($Green, 30%);
+    padding-bottom: 1rem;
+
+}
+
+&__entry--data {
+    color: darken($Green, 30%);
+
 }
 }
-

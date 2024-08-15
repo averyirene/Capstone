@@ -53,6 +53,16 @@ const Homepage = () => {
             console.log(text);
     
             setResults(text);
+
+            await fetch(`${apiUrl}/symptoms`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionStorage.getItem("JWTtoken")}`
+                },
+                body: JSON.stringify({ symptom }),
+            });
+
         } catch (error) {
             setLoading(false);
             console.error('Error getting data');
@@ -114,6 +124,8 @@ const Homepage = () => {
             <Results symptom={symptom} age={age} result={result} onReset={handleReset} />
         )}
     </section>
+    <span>Answers are powered by AI</span>
+
         </>
     );
 };

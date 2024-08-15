@@ -44,7 +44,7 @@ try {
 
 return (
 <div className="signup__page">
-    <form className="signup__form" onSubmit={handleSubmit}>
+    <form className="signup__form" autoComplete="off" onSubmit={handleSubmit}>
     <h1 className="signup__title">Sign Up</h1>
 
     <div className="signup__form--container">

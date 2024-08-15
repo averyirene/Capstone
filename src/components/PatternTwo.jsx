@@ -8,12 +8,12 @@ useEffect(() => {
     let breathein, holdbreath, breatheout;
 
     const PatternOne = () => {
-    setText('Breathe in');
-    breathein = setTimeout(() => {
-        setText('Hold');
-        holdbreath = setTimeout(() => {
-        setText('Breathe out');
-        breatheout = setTimeout(PatternOne, 5000); 
+        setText('Breathe in');
+        breathein = setTimeout(() => {
+            setText('Hold');
+            holdbreath = setTimeout(() => {
+                setText('Breathe out');
+                breatheout = setTimeout(PatternOne, 5000); 
         }, 4000); 
     }, 4000); 
     };

@@ -9,14 +9,14 @@ useEffect(() => {
     let breathein, holdbreath, breatheout;
 
     const PatternOneTimer = () => {
-    setText('Breathe in');
-    breathein = setTimeout(() => {
-        setText('Hold');
-        holdbreath = setTimeout(() => {
-        setText('Breathe out');
-        breatheout = setTimeout(PatternOneTimer, 8000); 
-        }, 7000); 
-    }, 4000); 
+        setText('Breathe in');
+        breathein = setTimeout(() => {
+            setText('Hold');
+            holdbreath = setTimeout(() => {
+                setText('Breathe out');
+                breatheout = setTimeout(PatternOneTimer, 8000); 
+            }, 7000); 
+        }, 4000); 
     };
 
     PatternOneTimer(); 

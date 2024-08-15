@@ -12,6 +12,14 @@ const handleMouseUp = () => {
 setIsHolding(false);
 };
 
+const handleTouchStart = () => {
+setIsHolding(true);
+};
+    
+const handleTouchEnd = () => {
+setIsHolding(false);
+};
+
 const patternGrow = {
 transition: 'transform 0.8s ease',
 transform: isHolding ? 'scale(2.0)' : 'scale(1)',
@@ -27,10 +35,10 @@ return (
 
         <div className='breathing__box'>
 
-
             <img className='pattern__1'
                 src={custom} style={patternGrow} onMouseDown={handleMouseDown} 
-                onMouseUp={handleMouseUp}/>
+                onMouseUp={handleMouseUp} onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd} />
 
         </div>
     </div>
