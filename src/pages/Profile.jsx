@@ -170,8 +170,8 @@ const handleDeleteSymptom = async (id) => {
                             .filter(symptom => symptom.username === userInfo.username)
                             .map((symptom) => (
                                 <div key={symptom.id} className="symptoms__entry">
-                                    <p className="symptoms__entry--title">Entry: </p> <p className="symptoms__entry--data">{symptom.symptom}</p>
-                                    <p className="symptoms__entry--title">Entry Date:</p> <p  className="symptoms__entry--text">{new Date(symptom.created_at).toLocaleDateString()}</p>
+                                    <p className="symptoms__entry--title">Symptom: </p> <p className="symptoms__entry--data">{symptom.symptom}</p>
+                                    <p className="symptoms__entry--title">Date of Symptom: </p> <p  className="symptoms__entry--text">{new Date(symptom.created_at).toLocaleDateString()}</p>
                                     <div className="delete__symptom--container">
                                         <button className="delete__button" onClick={() => handleDeleteSymptom(symptom.id)}> <img src={symptomDelete} alt="Delete"/> </button>
                                     </div>
