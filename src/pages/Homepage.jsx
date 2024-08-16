@@ -103,7 +103,7 @@ const Homepage = () => {
                 <input
                     id="symptom"
                     type="text"
-                    placeholder="Enter symptom"
+                    placeholder="Enter symptom or feeling"
                     className='input__symptom'
                     value={symptom}
                     onChange={(e) => setSymptom(e.target.value)}

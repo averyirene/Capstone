@@ -32,8 +32,7 @@
 }
 
 &__entry--text {
-    border-bottom: 1px solid $Green;
-    padding-bottom: 1rem;
+    margin-bottom: 0;
     color: darken($Green, 30%);
 }
 
@@ -119,13 +118,32 @@ textarea {
 
 &__entry--text {
     color: darken($Green, 30%);
-    border-bottom: 1px solid darken($Green, 30%);
-    padding-bottom: 1rem;
+    margin-bottom: 0;
 
 }
 
 &__entry--data {
     color: darken($Green, 30%);
 
+}
+}
+
+.delete {
+
+&__button--container {
+    border-bottom: 1px solid $Green;
+    padding-bottom: 1rem;
+}
+
+&__button {
+    display: flex;
+    margin-left: auto;
+    background: none;
+    border: none;
+}
+
+&__symptom--container {
+    border-bottom: 1px solid $Cream;
+    padding-bottom: 1rem;
 }
 }

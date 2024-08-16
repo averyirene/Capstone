@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import '../pages/Profile.scss';
 import loader from '../assets/reassure-loader.gif';
+import journalDelete from '../assets/journal-delete.png';
+import symptomDelete from '../assets/symptoms-delete.png';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -91,6 +93,29 @@ const handleAddEntry = async (event) => {
         console.error(error);
     }
 };
+const handleDeleteEntry = async (id) => {
+    try {
+        await axios.delete(`${apiUrl}/journal/${id}`, {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+
+        setJournalEntries(journalEntries.filter(entry => entry.id !== id));
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+const handleDeleteSymptom = async (id) => {
+    try {
+        await axios.delete(`${apiUrl}/symptoms/${id}`, {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+
+        setSymptoms(symptoms.filter(symptom => symptom.id !== id));
+        } catch (error) {
+        console.error(error);
+    }
+};
 
 
     return isLoading ? (
@@ -113,7 +138,7 @@ const handleAddEntry = async (event) => {
                 </form>
 
             </div>
-            
+
             <h3 className="profile__subtitle">Journal Log</h3>
 
             <div className="journal__entries">
@@ -126,6 +151,10 @@ const handleAddEntry = async (event) => {
                             <div key={entry.id} className="journal__entry">
                                 <p className="journal__entry--title">Entry:</p> <p className="journal__entry--data">{entry.entry}</p>
                                 <p className="journal__entry--title">Entry Date:</p> <p className="journal__entry--text">{newDate(entry.date)}</p>
+                                <div className="delete__button--container">
+                                    <button className="delete__button" onClick={() => handleDeleteEntry(entry.id)}> <img src={journalDelete} alt="Delete"/> </button>
+                                </div>
+
                             </div>
                         ))
                 )}
@@ -143,6 +172,9 @@ const handleAddEntry = async (event) => {
                                 <div key={symptom.id} className="symptoms__entry">
                                     <p className="symptoms__entry--title">Entry: </p> <p className="symptoms__entry--data">{symptom.symptom}</p>
                                     <p className="symptoms__entry--title">Entry Date:</p> <p  className="symptoms__entry--text">{new Date(symptom.created_at).toLocaleDateString()}</p>
+                                    <div className="delete__symptom--container">
+                                        <button className="delete__button" onClick={() => handleDeleteSymptom(symptom.id)}> <img src={symptomDelete} alt="Delete"/> </button>
+                                    </div>
                                 </div>
                             ))
                     )}
