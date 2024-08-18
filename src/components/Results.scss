@@ -1,0 +1,41 @@
+@use '../styles/break-points' as *;
+@use '../styles/colors' as *;
+@use '../styles/mixins' as *;
+
+
+.results {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+&__title {
+    margin-top: 0;
+    color: darken($Green, 10%); 
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+
+}
+
+&__text {
+    border-top: 1px solid $Purple;
+    padding-top: 1rem;
+    color: darken($Purple, 20%);
+}
+
+&__subtitle {
+    padding-right: .5rem;
+    font-weight: bold;
+    color: darken($Green, 10%); 
+}
+
+&__container {
+    background-color: $White;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    border: 2px solid $Green;
+}
+}

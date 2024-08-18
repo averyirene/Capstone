@@ -1,0 +1,63 @@
+@use '../styles/break-points' as *;
+@use '../styles/colors' as *;
+@use '../styles/mixins' as *;
+
+
+.about {
+
+&__disclaimer {
+    padding-bottom: 1rem;
+
+}
+
+&__title {
+    margin-left: 1rem;
+    color: darken($Green, 10%); 
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+&__page, &__page--bottom, &__disclaimer {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+&__page--bottom {
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: $Green;
+    color: $White;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+
+
+    &:hover {
+        background-color: darken($Green, 10%); 
+    }
+
+    &:focus {
+        outline: none; 
+    }
+}
+}
+
+h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+
+        @include tablet {
+            margin-left: 1rem;
+        }
+}
+
+li {
+    margin-left: 1rem;
+}
+
+span {
+    font-style: italic;
+    color: $Purple;
+}

@@ -1,0 +1,130 @@
+@use '../styles/break-points' as *;
+@use '../styles/colors' as *;
+@use '../styles/mixins' as *;
+
+
+.signup {
+
+&__page {
+    margin-bottom: 13rem;
+
+    @include tablet {
+        margin-bottom: 12rem;
+
+    }
+}
+
+&__form {
+    background: $White; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-bottom: 2rem;
+    
+    @include tablet {
+        padding-bottom: 4rem;
+    }
+
+    @include desktop {
+        padding-bottom: 2rem;
+        align-items: center;
+    }
+
+
+&--container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+        @include tablet {
+            display: flex;
+            align-items: baseline;
+        }
+
+        @include desktop {
+            display: flex;
+            align-items: baseline;
+            margin-right: 0;
+        }
+}
+}
+
+&__title {
+    margin-bottom: 1.4375rem;
+    color: darken($Green, 10%);
+    margin-left: 1rem;
+
+        @include tablet {
+        margin-bottom: 1.85rem;
+
+    }
+}
+
+&__label {
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-right: .5rem;
+}
+
+&__input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    margin-right: 1rem;
+
+        @include tablet {
+            margin-bottom: 24px;
+        }
+}
+
+&__message {
+    color: red;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+&__button {
+    border: none;
+    border-radius: 4px;
+    background-color: $Green;
+    color: $White;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    height: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
+    @include tablet {
+        width: 30%;
+    }
+
+    @include desktop {
+        width: 25%;
+    }
+
+    &:hover {
+        background-color: darken($Green, 10%); 
+    }
+
+    &:focus {
+        outline: none; 
+    }
+}
+}
+.login__register--text {
+    padding-left: 1rem;
+}
+
+.login__page--login {
+
+    @include desktop {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+    }
+}
