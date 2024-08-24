@@ -1,5 +1,5 @@
 import "./Header.scss";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
 const Header = ({ isLoggedIn }) => {
@@ -11,11 +11,11 @@ const Header = ({ isLoggedIn }) => {
             <Link to="/"><img className="logo" src={logo} alt="Reassure logo" /></Link>
 
             <div className="links__container">
-                <Link to="/" className="nav__button">Home</Link>
-                <Link to="/breathe" className="nav__button">Breathe</Link>
-                <Link to="/about" className="nav__button--about">About</Link>
-                {!isLoggedIn && <Link to="/login" className="nav__button">Login</Link>}
-                {isLoggedIn && <Link to="/profile" className="nav__button">Profile</Link>}
+                <NavLink to="/" className="nav__button" activeClassName="active">Home</NavLink>
+                <NavLink to="/breathe" className="nav__button" activeClassName="active">Breathe</NavLink>
+                <NavLink to="/about" className="nav__button--about" activeClassName="active">About</NavLink>
+                {!isLoggedIn && <NavLink to="/login" className="nav__button" activeClassName="active">Login</NavLink>}
+                {isLoggedIn && <NavLink to="/profile" className="nav__button"activeClassName="active">Profile</NavLink>}
             </div>
             </div>
         </nav>

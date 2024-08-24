@@ -62,18 +62,6 @@ nav {
     }
 
 
-    &:active{
-        background-color: $Green;
-        text-decoration: none;
-    }
-
-    &:focus{
-        background-color: $Green;
-        text-decoration: none;
-
-    }
-
-
         @include tablet {
             font-size: 20px;
             padding-left: 1.5rem;
@@ -93,4 +81,9 @@ nav {
             padding-left: 2rem;
         }
 
+}
+
+.active {
+    background-color: $Green;
+    text-decoration: none;  
 }

@@ -95,6 +95,10 @@
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 2rem;
+
+    &:hover {
+        background-color: darken($Green, 10%); 
+    }
     
     @include tablet {
         width: 30%;
